@@ -4,9 +4,13 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "booking")
 public class Booking implements Serializable {
@@ -31,61 +35,5 @@ public class Booking implements Serializable {
 
     @Column(name = "status", length = Integer.MAX_VALUE)
     private String status;
-
-    public String getBookingnumber() {
-        return bookingnumber;
-    }
-
-    public void setBookingnumber(String bookingnumber) {
-        this.bookingnumber = bookingnumber;
-    }
-
-    public String getBusnumber() {
-        return busnumber;
-    }
-
-    public void setBusnumber(String busnumber) {
-        this.busnumber = busnumber;
-    }
-
-    public String getBookingdate() {
-        return bookingdate;
-    }
-
-    public void setBookingdate(String bookingdate) {
-        this.bookingdate = bookingdate;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public String getNumberofseats() {
-        return numberofseats;
-    }
-
-    public void setNumberofseats(String numberofseats) {
-        this.numberofseats = numberofseats;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
 }
