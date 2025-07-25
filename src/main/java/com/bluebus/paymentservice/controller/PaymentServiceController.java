@@ -29,7 +29,7 @@ public class PaymentServiceController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PaymentServiceController.class);
     @Autowired
     private JmsTemplate jmsTemplate;
-    PaymentServiceController(PaymentRepository paymentRepository) {
+    public PaymentServiceController(PaymentRepository paymentRepository) {
         this.paymentRepository = paymentRepository;
     }
 
