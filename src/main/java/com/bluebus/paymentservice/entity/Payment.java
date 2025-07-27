@@ -17,9 +17,14 @@ public class Payment {
     private String paymentnumber;
 
     @Column(name = "bookingnumber", length = Integer.MAX_VALUE)
-    private String bookingnumber;
+    private Integer bookingnumber;
 
     @Column(name = "dateofpayment", length = Integer.MAX_VALUE)
     private String dateofpayment;
 
+    @Column(name = "creationdate", length = Integer.MAX_VALUE)
+    private String creationdate;
+
+    @Column(name = "lastupdateddate", length = Integer.MAX_VALUE)
+    private String lastupdateddate;
 }

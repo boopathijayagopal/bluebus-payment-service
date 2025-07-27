@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -16,7 +17,7 @@ import java.io.Serializable;
 public class Booking implements Serializable {
     @Id
     @Column(name = "bookingnumber", nullable = false, length = Integer.MAX_VALUE)
-    private String bookingnumber;
+    private Integer bookingnumber;
 
     @Column(name = "busnumber", length = Integer.MAX_VALUE)
     private String busnumber;
@@ -36,4 +37,23 @@ public class Booking implements Serializable {
     @Column(name = "status", length = Integer.MAX_VALUE)
     private String status;
 
+    @Column(name = "creationdate", length = Integer.MAX_VALUE)
+    private String creationdate;
+
+    @Column(name = "lastupdateddate", length = Integer.MAX_VALUE)
+    private String lastupdateddate;
+    @Override
+    public String toString() {
+        return "{" +
+                "bookingnumber='" + bookingnumber + '\'' +
+                ", busnumber='" + busnumber + '\'' +
+                ", bookingdate='" + bookingdate + '\'' +
+                ", source='" + source + '\'' +
+                ", destination='" + destination + '\'' +
+                ", numberofseats='" + numberofseats + '\'' +
+                ", status='" + status + '\'' +
+                ", creationdate='" + creationdate + '\'' +
+                ", lastupdateddate='" + lastupdateddate + '\'' +
+                '}';
+    }
 }
