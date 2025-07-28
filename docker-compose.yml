@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  payment-app:
+    build: .
+    container_name: java-app
+    ports:
+      - "8087:8087"
+    restart: unless-stopped

@@ -21,6 +21,9 @@ public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
+    @Autowired
+    private AuthValidationService authValidationService;
+
     public void createPayment(Payment payment) {
         LOGGER.info("Creating payment for booking number: {}", payment.getBookingnumber());
         Random rand = new Random();
@@ -59,5 +62,16 @@ public class PaymentService {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         LocalDateTime localDateTime = LocalDateTime.now();
         return localDateTime.format(dateTimeFormatter);
+    }
+
+    public boolean validateToken(String token) {
+        LOGGER.info("Validating token: {}", token);
+        // For simplicity, let's assume a valid token is "valid-token"
+        if (token == null || !authValidationService.validateToken(token)) {
+            LOGGER.warn("Invalid token provided: {}", token);
+            return false;
+        }
+        LOGGER.info("Token is valid");
+        return true;
     }
 }
